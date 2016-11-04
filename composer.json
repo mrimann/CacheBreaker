@@ -1,0 +1,23 @@
+{
+  "name": "opsdev/cache-breaker",
+  "type": "typo3-flow-package",
+  "description": "Add description here",
+  "require": {
+    "typo3/flow": "*"
+  },
+  "keywords": [
+    "cache",
+    "performance",
+    "assets",
+    "neos",
+    "flow"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mario Rimann",
+      "email": "mario@rimann.org",
+      "website": "https://rimann.org/"
+    }
+  ]
+}
