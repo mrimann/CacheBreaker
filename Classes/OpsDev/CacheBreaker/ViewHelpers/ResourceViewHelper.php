@@ -14,7 +14,7 @@ namespace OpsDev\CacheBreaker\ViewHelpers;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\Fluid\Core\ViewHelper\Exception\InvalidVariableException;
-use TYPO3\Flow\Resource\ResourceManager;
+use TYPO3\Flow\ResourceManagement\ResourceManager;
 
 /**
  * Returns a shortened md5 of the built JavaScript file
