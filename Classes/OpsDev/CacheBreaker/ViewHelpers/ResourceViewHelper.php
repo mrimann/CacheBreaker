@@ -12,13 +12,21 @@ namespace OpsDev\CacheBreaker\ViewHelpers;
  */
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\Fluid\Core\ViewHelper\Exception\InvalidVariableException;
+use TYPO3\Flow\Resource\ResourceManager;
 
 /**
- *
  * Returns a shortened md5 of the built JavaScript file
  */
 class ResourceViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper
 {
+    /**
+     * @Flow\Inject
+     * @var ResourceManager
+     */
+    protected $resourceManager;
+
     /**
      * Returns a shortened md5 of the file (built version).
      *
@@ -28,10 +36,23 @@ class ResourceViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper
      */
     public function render($path = null, $package = null)
     {
-        if (strpos($path, 'resource://') === 0) {
-            return substr(md5_file($path), 0, 12);
-        } else {
-            return substr(md5_file('resource://' . $package . '/Public/' . $path), 0, 12);
+        if ($path === null) {
+            throw new InvalidVariableException('Missing "path" argument.', 1353512742);
         }
+        if ($package === null) {
+            $package = $this->controllerContext->getRequest()->getControllerPackageKey();
+        }
+        if (strpos($path, 'resource://') === 0) {
+            $matches = array();
+            if (preg_match('#^resource://([^/]+)/Public/(.*)#', $path, $matches) === 1) {
+                $package = $matches[1];
+                $path = $matches[2];
+            } else {
+                throw new InvalidVariableException(sprintf('The path "%s" which was given to the ResourceViewHelper must point to a public resource.', $path), 1353512639);
+            }
+        }
+        $uri = $this->resourceManager->getPublicPackageResourceUri($package, $path);
+        $hash = substr(md5_file('resource://' . $package . '/Public/' . $path), 0, 8);
+        return $uri . '?' . $hash;
     }
 }
