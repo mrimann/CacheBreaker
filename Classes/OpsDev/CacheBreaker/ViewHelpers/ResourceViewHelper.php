@@ -12,14 +12,14 @@ namespace OpsDev\CacheBreaker\ViewHelpers;
  */
 
 use Neos\Flow\Annotations as Flow;
-use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\Fluid\Core\ViewHelper\Exception\InvalidVariableException;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
+use Neos\FluidAdaptor\Core\ViewHelper\Exception\InvalidVariableException;
 use Neos\Flow\ResourceManagement\ResourceManager;
 
 /**
  * Returns a shortened md5 of the built JavaScript file
  */
-class ResourceViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper
+class ResourceViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper
 {
     /**
      * @Flow\Inject
