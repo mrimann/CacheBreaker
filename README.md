@@ -27,3 +27,8 @@ Usage
 ```
 <link rel="stylesheet" href="{opsdev:resource(path: 'path/to/your/file.css', package: 'Vendor.YourPackageName')}" />
 ```
+
+Credit
+------
+
+The development of this package is partially sponsored by [CodeQ](http://codeq.at) web factory.
