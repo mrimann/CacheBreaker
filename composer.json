@@ -20,6 +20,11 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "Dmitri Pisarev",
+            "email": "dimaip@gmail.com",
+            "homepage": "http://dimaip.github.io/"
+        },
+        {
             "name": "Mario Rimann",
             "email": "mario@rimann.org",
             "homepage": "https://rimann.org/"
