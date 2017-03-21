@@ -3,7 +3,7 @@
     "type": "typo3-flow-package",
     "description": "Create link to static resources with cache-breaking segment based on md5 of the file",
     "require": {
-        "typo3/flow": "~4.0.0"
+        "neos/flow": "^4.0.0"
     },
     "autoload": {
         "psr-4": {
