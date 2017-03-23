@@ -1,0 +1,5 @@
+prototype(OpsDev.CacheBreaker:ResourceUri) {
+    @class = 'OpsDev\\CacheBreaker\\FusionObjects\\ResourceUriImplementation'
+
+    @exceptionHandler = 'Neos\\Fusion\\Core\\ExceptionHandlers\\AbsorbingHandler'
+}

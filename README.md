@@ -6,7 +6,7 @@ This ViewHelper works like `f:uri.resource` ViewHelper, but it appends cache bre
 Installation
 ------------
 
-Just add/require the package via composer:
+Require the package via composer:
 
 ```
 composer require "opsdev/cache-breaker"
@@ -16,19 +16,30 @@ composer require "opsdev/cache-breaker"
 Usage
 -----
 
-### Add the namespace declaration to your Fluid-Template
+### Use as a Fluid ViewHelper
 
 ```
 {namespace opsdev=OpsDev\CacheBreaker\ViewHelpers}
-```
-
-### Use the resource ViewHelper to include resources with cache breaking hash
-
-```
 <link rel="stylesheet" href="{opsdev:resource(path: 'path/to/your/file.css', package: 'Vendor.YourPackageName')}" />
+```
+
+### Use as a Fusion object
+
+```
+stylesheets.index = T:Tag {
+    tagName = 'link'
+    attributes {
+        href = OpsDev.CacheBreaker:ResourceUri {
+            path = 'path/to/your/file.css'
+            package = 'Vendor.YourPackageName'
+        }
+        type = 'text/css'
+        rel = 'stylesheet'
+    }
+}
 ```
 
 Credit
 ------
 
-The development of this package is partially sponsored by [CodeQ](http://codeq.at) web factory.
+The development of this package is partially sponsored by [CodeQ](http://codeq.at) web factory and [St Philaret Christian Orthodox Institute](http://psmb.github.io/).
