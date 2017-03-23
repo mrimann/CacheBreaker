@@ -1,7 +1,7 @@
 OpsDev.CacheBreaker
 ==================
 
-This ViewHelper works like `f:uri.resource` ViewHelper, but it appends cache breaking segment based on file's md5.
+This package provides a ViewHelper and a Fusion object that work like their original counterparts, but appending cache breaking segment based on the file's md5.
 
 Installation
 ------------
