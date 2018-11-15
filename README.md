@@ -39,7 +39,12 @@ stylesheets.index = T:Tag {
 }
 ```
 
-Credit
-------
+Credits
+-------
 
 The development of this package is partially sponsored by [CodeQ](http://codeq.at) web factory and [St Philaret Christian Orthodox Institute](http://psmb.github.io/).
+
+
+Also the following persons have contributed to this package - thanks!
+- Dimitri Pisarev
+- Simon Schaufelberger
