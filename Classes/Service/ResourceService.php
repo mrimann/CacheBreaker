@@ -11,13 +11,14 @@ class ResourceService {
      */
     protected $resourceManager;
 
-    /**
-     * Appends a shortened md5 of the file.
-     *
-     * @param string $path The location of the resource, can be either a path relative to the Public resource directory of the package or a resource://... URI
-     * @param string $package Target package key. If not set, the current package key will be used
-     * @return string
-     */
+	/**
+	 * Appends a shortened md5 of the file.
+	 *
+	 * @param string $path The location of the resource, can be either a path relative to the Public resource directory of the package or a resource://... URI
+	 * @param string $package Target package key. If not set, the current package key will be used
+	 * @return string
+	 * @throws \Exception
+	 */
     public function getResourceUri($path, $package = null)
     {
         if (strpos($path, 'resource://') === 0) {

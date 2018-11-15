@@ -20,7 +20,7 @@ use OpsDev\CacheBreaker\Service\ResourceService;
 /**
  * Returns a shortened md5 of the built JavaScript file
  */
-class ResourceViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper
+class ResourceViewHelper extends AbstractViewHelper
 {
     /**
      * @Flow\Inject
@@ -34,13 +34,15 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\Core\ViewHelper\AbstractView
      */
     protected $resourceService;
 
-    /**
-     * Returns a shortened md5 of the file (built version).
-     *
-     * @param string $path The location of the resource, can be either a path relative to the Public resource directory of the package or a resource://... URI
-     * @param string $package Target package key. If not set, the current package key will be used
-     * @return string
-     */
+	/**
+	 * Returns a shortened md5 of the file (built version).
+	 *
+	 * @param string $path The location of the resource, can be either a path relative to the Public resource directory of the package or a resource://... URI
+	 * @param string $package Target package key. If not set, the current package key will be used
+	 * @return string
+	 * @throws InvalidVariableException
+	 * @throws \Exception
+	 */
     public function render($path = null, $package = null)
     {
         if ($path === null) {

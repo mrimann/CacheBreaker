@@ -3,7 +3,7 @@
     "type": "typo3-flow-package",
     "description": "Create link to static resources with cache-breaking segment based on md5 of the file",
     "require": {
-        "neos/flow": "^4.0.0"
+        "neos/flow": "^5.0.0"
     },
     "autoload": {
         "psr-4": {
@@ -102,7 +102,12 @@
             "Neos.Neos-20170115114620",
             "Neos.Fusion-20170120013047",
             "Neos.Flow-20170125103800",
-            "Neos.Flow-20170127183102"
+            "Neos.Flow-20170127183102",
+            "Neos.Seo-20170127154600",
+            "Neos.Fusion-20180211175500",
+            "Neos.Fusion-20180211184832",
+            "Neos.Flow-20180415105700",
+            "Neos.Neos-20180907103800"
         ]
     }
 }

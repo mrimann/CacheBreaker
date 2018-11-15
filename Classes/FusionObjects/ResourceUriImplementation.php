@@ -51,12 +51,13 @@ class ResourceUriImplementation extends AbstractFusionObject
         return $this->fusionValue('package');
     }
 
-    /**
-     * Returns the absolute URL of a resource with cache bursting string
-     *
-     * @return string
-     * @throws FusionException
-     */
+	/**
+	 * Returns the absolute URL of a resource with cache bursting string
+	 *
+	 * @return string
+	 * @throws FusionException
+	 * @throws \Exception
+	 */
     public function evaluate()
     {
         $path = $this->getPath();
