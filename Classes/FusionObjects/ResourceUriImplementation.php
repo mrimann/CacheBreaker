@@ -36,7 +36,7 @@ class ResourceUriImplementation extends AbstractFusionObject
      *
      * @return string
      */
-    public function getPath()
+    public function getPath(): string
     {
         return $this->fusionValue('path');
     }
@@ -46,7 +46,7 @@ class ResourceUriImplementation extends AbstractFusionObject
      *
      * @return string
      */
-    public function getPackage()
+    public function getPackage(): string
     {
         return $this->fusionValue('package');
     }
@@ -58,7 +58,7 @@ class ResourceUriImplementation extends AbstractFusionObject
 	 * @throws FusionException
 	 * @throws \Exception
 	 */
-    public function evaluate()
+    public function evaluate(): string
     {
         $path = $this->getPath();
         if ($path === null) {

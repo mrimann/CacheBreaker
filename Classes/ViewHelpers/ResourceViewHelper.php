@@ -34,17 +34,23 @@ class ResourceViewHelper extends AbstractViewHelper
      */
     protected $resourceService;
 
-	/**
-	 * Returns a shortened md5 of the file (built version).
-	 *
-	 * @param string $path The location of the resource, can be either a path relative to the Public resource directory of the package or a resource://... URI
-	 * @param string $package Target package key. If not set, the current package key will be used
-	 * @return string
-	 * @throws InvalidVariableException
-	 * @throws \Exception
-	 */
-    public function render($path = null, $package = null)
+    public function initializeArguments()
     {
+        $this->registerArgument('path', 'string', 'Relative path');
+        $this->registerArgument('package', 'string', 'Name of the package');
+    }
+
+    /**
+     * Returns a shortened md5 of the file (built version).
+     *
+     * @return string
+     * @throws InvalidVariableException
+     * @throws \Exception
+     */
+    public function render(): string
+    {
+        $path = $this->arguments['path'];
+        $package = $this->arguments['package'];
         if ($path === null) {
             throw new InvalidVariableException('Missing "path" argument.', 1353512742);
         }
